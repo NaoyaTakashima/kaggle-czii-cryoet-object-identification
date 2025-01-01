@@ -1,0 +1,53 @@
+hydra:
+  job:
+    name: inference
+    chdir: true
+  run:
+    dir: ${dir.output_dir}/${hydra.job.name}/${exp_no}/${exp_name}/single
+  sweep:
+    dir: ${dir.output_dir}/${hydra.job.name}/${exp_no}/${exp_name}
+    subdir: run${hydra.job.num}
+
+defaults:
+  - _self_
+  - dir: local
+  - model: Unet
+  - split: fold_0-1
+
+weight:
+  exp_name: ${exp_name}
+  exp_no: ${exp_no}
+  run_name: single
+ 
+pre_training: False
+seed: 42
+exp_no: ???
+exp_name: ???
+num_folds: 5
+input_size: [512, 512]
+  
+# training
+epoch: 50
+batch_size: 16
+num_workers: 24
+accelerator: auto
+use_amp: true
+debug: false
+gradient_clip_val: 1.0
+accumulate_grad_batches: 1
+monitor: val_loss
+monitor_mode: min
+check_val_every_n_epoch: 1
+patience: 5
+
+# loss_fn
+loss_fn: DiceLoss
+
+# optimizer
+optimizer:
+  lr: 0.001
+  
+# scheduler
+scheduler:
+  num_warmup_steps: 0
+

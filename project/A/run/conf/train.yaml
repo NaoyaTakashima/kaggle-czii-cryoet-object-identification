@@ -1,0 +1,59 @@
+hydra:
+  job:
+    name: train
+    chdir: true
+  run:
+    dir: ${dir.output_dir}/${hydra.job.name}/${exp_no}/${exp_name}/single
+  sweep:
+    dir: ${dir.output_dir}/${hydra.job.name}/${exp_no}/${exp_name}
+    subdir: run${hydra.job.num}
+
+defaults:
+  - _self_
+  - dir: local
+  - model: Unet
+  - split: ???
+
+project: ???
+seed: 42
+exp_no: ???
+exp_name: ???
+
+# datamodule
+spatial_size: 96
+num_classes: 7
+num_samples: 16
+patch_size: 96
+
+# training
+epoch: 50
+batch_size_train: 1
+batch_size_valid: 16
+num_workers: 2
+accelerator: auto
+use_amp: true
+debug: false
+gradient_clip_val: 1.0
+accumulate_grad_batches: 1
+monitor: val_loss
+monitor_mode: min
+check_val_every_n_epoch: 1
+
+# optimizer
+optimizer:
+  lr: 0.001
+  
+# scheduler
+scheduler:
+  num_warmup_steps: 0
+
+# augmentation
+aug:
+  p_rotate90d: 0.5
+  p_flipd: 0.5
+  p_affine: 0.9
+  p_zoom: 0.8
+  min_zoom: 0.75
+  max_zoom: 1.0
+  p_gaussian_noise: 0.5
+  p_adjust_contrast: 0.25

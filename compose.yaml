@@ -1,0 +1,17 @@
+services:
+  app:
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    shm_size: '16gb'
+    volumes:
+      - ./:/kaggle
+    working_dir: /kaggle
+    ports:
+      - "8888:8888"
+    tty: true

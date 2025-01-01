@@ -1,0 +1,4 @@
+data_dir: /home/naoya/kaggle/czii/input/numpy-dataset
+output_dir: /home/naoya/kaggle/czii/???/output
+model_dir: /home/naoya/kaggle/czii/???/output/train
+sub_dir: ./

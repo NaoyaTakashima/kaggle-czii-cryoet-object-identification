@@ -1,0 +1,30 @@
+train_ids:
+- TS_8-denoised
+- TS_26-denoised
+- TS_3-denoised
+- TS_15-denoised
+- TS_2-denoised
+- TS_16-denoised
+- TS_22-denoised
+- TS_20-denoised
+- TS_14-denoised
+- TS_23-denoised
+- TS_21-denoised
+- TS_11-denoised
+- TS_7-denoised
+- TS_17-denoised
+- TS_19-denoised
+- TS_1-denoised
+- TS_4-denoised
+- TS_25-denoised
+- TS_12-denoised
+- TS_10-denoised
+- TS_0-denoised
+- TS_13-denoised
+- TS_6-denoised
+- TS_5-denoised
+- TS_9-denoised
+- TS_24-denoised
+- TS_18-denoised
+valid_ids:
+- TS_5_4-denoised

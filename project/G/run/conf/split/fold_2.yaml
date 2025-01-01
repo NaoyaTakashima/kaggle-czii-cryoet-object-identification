@@ -1,0 +1,54 @@
+train_ids:
+- TS_73_6-isonetcorrected
+- TS_5_4-wbp
+- TS_23-denoised
+- TS_86_3-denoised
+- TS_11-denoised
+- TS_8-denoised
+- TS_6_6-isonetcorrected
+- TS_1-denoised
+- TS_6_4-wbp
+- TS_6_6-wbp
+- TS_20-denoised
+- TS_99_9-ctfdeconvolved
+- TS_99_9-denoised
+- TS_26-denoised
+- TS_16-denoised
+- TS_21-denoised
+- TS_9-denoised
+- TS_6_4-denoised
+- TS_6_4-ctfdeconvolved
+- TS_17-denoised
+- TS_22-denoised
+- TS_73_6-denoised
+- TS_2-denoised
+- TS_13-denoised
+- TS_73_6-wbp
+- TS_5_4-isonetcorrected
+- TS_6_6-ctfdeconvolved
+- TS_18-denoised
+- TS_7-denoised
+- TS_86_3-ctfdeconvolved
+- TS_99_9-wbp
+- TS_99_9-isonetcorrected
+- TS_14-denoised
+- TS_3-denoised
+- TS_6_4-isonetcorrected
+- TS_5-denoised
+- TS_6_6-denoised
+# - TS_25-denoised
+- TS_6-denoised
+- TS_73_6-ctfdeconvolved
+- TS_0-denoised
+# - TS_15-denoised
+- TS_5_4-ctfdeconvolved
+- TS_5_4-denoised
+- TS_24-denoised
+- TS_86_3-isonetcorrected
+# - TS_10-denoised
+- TS_19-denoised
+- TS_86_3-wbp
+- TS_12-denoised
+- TS_4-denoised
+valid_ids:
+- TS_69_2-denoised

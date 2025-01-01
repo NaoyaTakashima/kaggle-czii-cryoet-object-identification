@@ -1,0 +1,32 @@
+train_ids:
+# - TS_5_4-ctfdeconvolved
+# - TS_5_4-isonetcorrected
+- TS_5_4-wbp
+- TS_5_4-denoised
+# - TS_6_4-ctfdeconvolved
+# - TS_6_4-isonetcorrected
+# - TS_6_4-wbp
+# - TS_6_4-denoised
+# - TS_69_2-ctfdeconvolved
+# - TS_69_2-isonetcorrected
+- TS_69_2-wbp
+- TS_69_2-denoised
+# - TS_6_6-ctfdeconvolved
+# - TS_6_6-isonetcorrected
+- TS_6_6-wbp
+- TS_6_6-denoised
+# - TS_73_6-ctfdeconvolved
+# - TS_73_6-isonetcorrected
+- TS_73_6-wbp
+- TS_73_6-denoised
+# - TS_86_3-ctfdeconvolved
+# - TS_86_3-isonetcorrected
+- TS_86_3-wbp
+- TS_86_3-denoised
+# - TS_99_9-ctfdeconvolved
+# - TS_99_9-isonetcorrected
+- TS_99_9-wbp
+- TS_99_9-denoised
+
+valid_ids:
+- TS_6_4-denoised

@@ -1,0 +1,4 @@
+name: Net
+pretrained: False
+num_classes: 7
+model_name: resnet18

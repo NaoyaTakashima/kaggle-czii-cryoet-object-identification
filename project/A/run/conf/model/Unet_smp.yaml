@@ -1,0 +1,4 @@
+name: Unet_smp
+encoder_name: resnet34
+in_channels: 1
+classes: 7

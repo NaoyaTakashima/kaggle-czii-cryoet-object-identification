@@ -1,0 +1,22 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+input/
+output/
+working/
+
+notebook/tools/
+
+.ipynb_checkpoints/
+*.config
+*.csv
+
+click.py

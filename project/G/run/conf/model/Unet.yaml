@@ -1,0 +1,9 @@
+name: Unet
+spatial_dims: 3
+in_channels: 1
+out_channels: 7
+channels: [48, 64, 80, 80]
+strides: [2, 2, 1]
+num_res_units: 1
+alpha: 0.5
+beta: 0.5
