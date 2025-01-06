@@ -32,7 +32,7 @@ class CZIIDataModule(LightningDataModule):
         self.random_transforms = Compose([
             RandWeightedCropd(
                 keys=["image", "label"],
-                w_key="label",
+                w_key="image",
                 spatial_size=[self.cfg.spatial_size] * 3,
                 num_samples=self.cfg.num_samples
             ),

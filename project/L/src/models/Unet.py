@@ -50,16 +50,16 @@ class Unet(nn.Module):
         if y is not None:
             # print(logits.shape, y.shape)
             # print(y.shape)
-            # loss_bce = self.loss_fn_bce(logits, y)
+            loss_bce = self.loss_fn_bce(logits, y)
             # loss_dice = self.loss_fn_dice(logits, y)
-            loss_tv = self.loss_fn_tv(logits, y)
+            # loss_tv = self.loss_fn_tv(logits, y)
             # クラスごとの損失計算
             
 
             # loss = 0.3*loss_ce + 0.3*loss_dice + 0.4*loss_tv
-            loss = loss_tv
+            # loss = loss_tv
             # loss = loss_dice
-            # loss = loss_bce
+            loss = loss_bce
             output["loss"] = loss
 
         return output
