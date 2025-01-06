@@ -115,3 +115,31 @@ def prepare_ground_truth_with_config(shape, protein_centers, r_scale, config):
         gt_volume[label - 1] = np.clip(gt_volume[label - 1], 0, 1)
 
     return gt_volume
+
+def prepare_ground_truth_all_with_config(shape, protein_centers, r_scale, config):
+    """
+    設定情報に基づいてGTを生成する（すべてのプロテインを対象）。
+    
+    Parameters:
+        shape (tuple): 3Dトモグラムのサイズ
+        protein_centers (dict): 各タンパク質の中心座標 {label: [(z, y, x), ...]}
+        config (list): タンパク質の設定情報
+    
+    Returns:
+        numpy.ndarray: (1, depth, height, width)の3Dヒートマップ
+    """
+    # グローバルヒートマップを1チャネルで作成
+    gt_volume = np.zeros((1, *shape), dtype=np.float32)
+
+    for protein in config.pickable_objects:
+        radius = protein.radius / r_scale
+        centers = protein_centers[protein.name]
+
+        for center in centers:
+            # 各中心のガウスヒートマップをグローバルボリュームに加算
+            gt_volume[0] += generate_gaussian_heatmap(shape, center, radius)
+    
+    # 値を0～1にクリップ
+    gt_volume[0] = np.clip(gt_volume[0], 0, 1)
+
+    return gt_volume
