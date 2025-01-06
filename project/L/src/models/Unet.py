@@ -32,8 +32,8 @@ class Unet(nn.Module):
         self.class_weights = torch.tensor([1/113, 16/113, 0, 32/113, 16/113, 32/113, 16/113])
 
         # self.loss_fn = DiceCELoss(include_background=True, to_onehot_y=True, softmax=True)
-        self.loss_fn_tv = TverskyLoss(include_background=True, to_onehot_y=True, softmax=True, alpha=alpha, beta=beta)
-        self.loss_fn_dice = DiceLoss(include_background=True, to_onehot_y=True, weight=self.class_weights, softmax=True)
+        self.loss_fn_tv = TverskyLoss(include_background=False, to_onehot_y=False, sigmoid=True, alpha=alpha, beta=beta)
+        self.loss_fn_dice = DiceLoss(include_background=True, to_onehot_y=False, softmax=True)
         self.loss_fn_bce = nn.BCEWithLogitsLoss()
         # self.loss_fn = DiceFocalLoss(include_background=True, to_onehot_y=True, softmax=True, gamma=2.0, weight=class_weights)
 
@@ -50,16 +50,16 @@ class Unet(nn.Module):
         if y is not None:
             # print(logits.shape, y.shape)
             # print(y.shape)
-            loss_bce = self.loss_fn_bce(logits, y)
+            # loss_bce = self.loss_fn_bce(logits, y)
             # loss_dice = self.loss_fn_dice(logits, y)
-            # loss_tv = self.loss_fn_tv(logits, y)
+            loss_tv = self.loss_fn_tv(logits, y)
             # クラスごとの損失計算
             
 
             # loss = 0.3*loss_ce + 0.3*loss_dice + 0.4*loss_tv
-            # loss = loss_tv
+            loss = loss_tv
             # loss = loss_dice
-            loss = loss_bce
+            # loss = loss_bce
             output["loss"] = loss
 
         return output
