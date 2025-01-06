@@ -1,0 +1,5 @@
+data_dir_x: /kaggle/input/numpy-dataset-heatmap
+data_dir_y: /kaggle/input/numpy-dataset
+output_dir: /home/naoya/kaggle/czii/???/output
+model_dir: /home/naoya/kaggle/czii/???/output/train
+sub_dir: ./

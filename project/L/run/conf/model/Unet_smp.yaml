@@ -1,0 +1,4 @@
+name: Unet_smp
+encoder_name: efficientnet-b5
+in_channels: 1
+classes: 7
